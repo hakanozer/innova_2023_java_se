@@ -3,6 +3,7 @@ package com.innova;
 public class MainApp {
     public static void main(String[] args) {
 
+        String namx = new String("Alix");
         String name = "Ali";
         String surname = "Bilmem";
 
@@ -37,7 +38,7 @@ public class MainApp {
 
         // Array
         // unmutable -> runtimeda ekle, silme yapılamaz.
-        String[] cities = { "İstanbul", "Ankara", "İzmir", "Bursa", "Antalya", "Adana" };
+        String[] cities = { "İstanbul", "Ankara", "İzmir", "Bursa", "Antalya", "Adana", "Mersin", "Antakya", "Samsun" };
         System.out.println(cities);
         // index -> 0 dan başlar, dizi içindeki değerleri almak için kullanılır.
         System.out.println( cities[0] );
@@ -48,6 +49,59 @@ public class MainApp {
             System.out.println( cities[index] );
         }
 
+
+        // for loop
+        for ( int i = 0; i < 5; i++ ) {
+            System.out.println("i Call : "+ i);
+        }
+
+        // array all items
+        for( int i = 0; i < cities.length; i++ ) {
+            String item = cities[i];
+            if ( item.equals("İzmir") ) {
+                continue; // bu adımı atla,dikkate almas
+            }
+            if ( item.equals("Hatay") ) {
+                System.out.print("Deprem - ");
+            }
+            if ( item.equals("Mersin") ) {
+                break; // döngüyü kırmak bitirmek
+            }
+            System.out.println(item);
+        }
+
+        // fori
+        System.out.println("====================");
+        for (int i = 2; i < cities.length - 1; i++) {
+            System.out.println(cities[i]);
+        }
+        
+        
+        // foreach
+        System.out.println("====================");
+        for( String item : cities ) {
+            System.out.println( item );
+        }
+
+        // Nesne Üretimi
+        // Sınıf - Class -> Action -> Kullanmak istediğimiz Sınıf(Tür)
+        // Nesne - Object -> obj -> Sınıfın kullanılabilir üyesidir.
+        // Kurucu - Constructor -> Sınıfın default çalışan methodudur.
+        Action obj = new Action();
+        // nesne altındaki özellikleri bulmak için (.) operatörü kullanılır.
+        //for (int i = 0; i < 10; i++) {
+        obj.noParamNoReturn();
+        //}
+        obj.noReturn("sema.jpg", 100);
+        obj.noReturn("sema.jpg", 300);
+        obj.noReturn("sema.jpg", 500);
+        obj.noReturn("Ahmet Bilsin", 32);
+
+        String ns = obj.nameSurnameJoin("Selin", "Bil");
+        System.out.println(ns);
+
+        boolean paramsStatus = obj.allParam("İstabul","Beşiktaş", "no: 1", "Meydan");
+        System.out.println(paramsStatus);
 
     }
 }
