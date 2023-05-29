@@ -1,5 +1,7 @@
 package com.innova;
 
+import java.util.Scanner;
+
 public class MainApp {
     public static void main(String[] args) {
 
@@ -102,6 +104,11 @@ public class MainApp {
 
         boolean paramsStatus = obj.allParam("İstabul","Beşiktaş", "no: 1", "Meydan");
         System.out.println(paramsStatus);
+
+        // kurucu method kullanımı
+        Profile profile = new Profile(15, "New Data");
+        profile.call();
+
 
     }
 }
