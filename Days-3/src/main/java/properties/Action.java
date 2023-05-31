@@ -3,7 +3,7 @@ package properties;
 public class Action {
 
     public void productSave( Product product ) {
-        System.out.println( product.toString() );
+        System.out.println( product );
     }
 
     public void allProduct( Product[] products ) {
