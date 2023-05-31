@@ -1,6 +1,7 @@
 package useHashMap;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -62,6 +63,16 @@ public class MainHashMap {
         System.out.println( hm );
 
         System.out.println("=================");
+        // Hashmap içerisinde eklenen üyelerin bizim eklediğimiz sıraya göre eklenmesini sağlar.
+        // Sıralama algoritması bizim eklemediğimize göre olacağından dolayı maliyeti biraz artar.
+        Map<String, Object> mapx = new LinkedHashMap<>();
+        mapx.put("name", "Ali");
+        mapx.put("surname", "Bilmem");
+        mapx.put("email", "ali@mail.com");
+        mapx.put("age", 40);
+        mapx.put("status", true);
+        mapx.put("name", "Ahmet");
+        System.out.println(mapx);
 
     }
 
