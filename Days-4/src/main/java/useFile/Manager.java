@@ -2,6 +2,8 @@ package useFile;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Manager {
 
@@ -40,6 +42,21 @@ public class Manager {
         }catch (Exception ex) {
             System.err.println("addData Error :" + ex);
         }
+    }
+
+    // File read
+    public ArrayList<String> read() {
+        ArrayList<String> ls = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(file);
+            while ( scanner.hasNext() ) {
+                String line = scanner.nextLine();
+                ls.add(line);
+            }
+        }catch (Exception ex) {
+            System.err.println("read error:" +ex);
+        }
+        return ls;
     }
     
 
