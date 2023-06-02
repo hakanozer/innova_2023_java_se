@@ -9,4 +9,13 @@ public class Note {
     private String title;
     private String detail;
 
+    public Note() {
+
+    }
+
+    public Note(Integer nid, String title, String detail) {
+        this.nid = nid;
+        this.title = title;
+        this.detail = detail;
+    }
 }
