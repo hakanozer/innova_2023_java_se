@@ -1,14 +1,18 @@
-import utils.DB;
+import models.Note;
+import services.NoteService;
 
 public class MainApplication {
+
     public static void main(String[] args) {
 
-        DB db = new DB();
-        db.connection();
-        db.close();
+        NoteService service = new NoteService();
 
-        db.connection();
-        db.close();
+        Note note = new Note();
+        note.setTitle("Veli Toplantısı");
+        note.setDetail("Toplantı Detay");
+        int status = service.save(note);
+        System.out.println("Status :" + status);
 
     }
+
 }
